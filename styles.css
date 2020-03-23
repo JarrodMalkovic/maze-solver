@@ -1,0 +1,361 @@
+/*-------------------------------------------------------*/
+/* BASIC SETUP */
+/*-------------------------------------------------------*/
+table,
+ul {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #fff;
+  color: #555;
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility; /*WTF?*/
+}
+
+/*-------------------------------------------------------*/
+/* VISUALIZER BOARD SETUP */
+/*-------------------------------------------------------*/
+td {
+  min-width: 30px;
+  height: 30px;
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  background-color: white;
+  transition: background-color 0.5s, transform 0.5ss, border-radius 0.5ss;
+}
+
+table {
+  width: 100%;
+  display: block;
+  border-collapse: separate;
+  border-spacing: 0px;
+  position: fixed;
+  *border-collapse: expression('separate', cellSpacing = '1px');
+}
+
+/*-------Classes--------*/
+.wall {
+  animation-name: moveInLeft;
+  animation-duration: 0.4s;
+  background-color: #2b2d42;
+  border: none;
+}
+
+@keyframes moveInLeft {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.3);
+  }
+}
+
+.visited,
+.visited-no-animation {
+  background-color: #a8dadc;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+}
+.visited {
+  animation-name: visited;
+  animation-duration: 0.6s;
+}
+
+@keyframes visited {
+  0% {
+    background-color: #5779df;
+    transform: scale(0);
+    border-radius: 200%;
+  }
+  20% {
+    background-color: #5779df;
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+@keyframes path {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.25);
+  }
+}
+
+.startNode {
+  background-color: #1a936f;
+  border: none;
+}
+
+.endNode {
+  background-color: red;
+  border: none;
+}
+
+.path,
+.path-no-animation {
+  background-color: #457b9d;
+  border: none;
+}
+
+.path {
+  animation-name: path;
+  animation-duration: 0.5s;
+}
+
+/*-------------------------------------------------------*/
+/* MODAL
+/*-------------------------------------------------------*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.modalDialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  -webkit-transition: opacity 100ms ease-in;
+  -moz-transition: opacity 100ms ease-in;
+  transition: opacity 100ms ease-in;
+  pointer-events: none;
+}
+.modalDialog:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modalDialog > div {
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 3px;
+  background: #fff;
+}
+.close {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #2b2d42;
+  color: #fff;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 34px;
+  height: 34px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -moz-box-shadow: 1px 1px 3px #000;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
+  padding-top: 5px;
+}
+.close:hover {
+  background: #393b55;
+}
+
+/*-------------------------------------------------------*/
+/* Notifications
+/*-------------------------------------------------------*/
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+/*-------------------------------------------------------*/
+/* Navbar */
+/*-------------------------------------------------------*/
+
+#hamburger {
+  display: none;
+}
+
+/* Navbar container */
+.navigation {
+  overflow-x: hidden;
+  background-color: #2b2d42;
+  font-family: Arial;
+}
+
+/* Links inside the navigation */
+.navigation a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navigation a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #393b55;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.navigation a:hover {
+  cursor: pointer;
+}
+
+.navigation .icon {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .navigation a:not(:first-child),
+  .navigation div {
+    display: none;
+  }
+
+  .navigation a.icon {
+    float: right;
+    display: block;
+  }
+}
+@media screen and (max-width: 960px) {
+  .navigation.responsive {
+    position: relative;
+    z-index: 10;
+  }
+  .navigation.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navigation.responsive a,
+  .navigation.responsive div {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}

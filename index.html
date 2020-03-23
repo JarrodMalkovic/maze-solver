@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+    href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Pathfinding Visualizer</title>
+  </head>
+  <body>
+  <div class="navigation"> 
+      <a>
+        <h4>THE VISUALIZER</h4>
+      </a>
+      <a href="#openModal-about">Tutorial</a href="#openModal-about">
+      <a class="clearWallsButton">Clear Walls</a>
+      <a class="clearPathButton">Clear Path</a>
+      <a class="generateWallsButton">Generate Random Walls</a>
+      <a class="visualizeButton" >Visualize</a>
+      <div class="dropdown">
+        <button class="dropbtn">Select an Algorithm <i class="fa fa-caret-down"></i></button>
+          <div class="dropdown-content">
+            <a id="BFS">Breadth-First-Search</a>
+            <a id="DFS">Depth-First-Search</a>
+            <a id="A*">A*</a>
+          </div>
+      </div>
+      <a class="icon">
+        <i class="fa fa-bars"></i>
+      </a>
+  </div>
+
+<div id="snackbar">Some text some message..</div>
+
+    <div id="openModal-about" class="modalDialog">
+      <div>
+         <a href="#close" title="Close" class="close">X</a>
+         <h2>THE VISUALIZER Explanation</h2>
+         <div class="content">
+          <strong>What is this?</strong>
+          <p>This web app is a visualization tool for several pathfinding alogirthms that are used in applications such as video games, networking, etc, in order to find the shortest distance between two points (a start node and end node) by following a set of rules. The alogirthms that can be used in this tool is A*, Dijkstra's and Bread-First-Search </p>
+          <br>
+          <strong>Placing Start and End Nodes</strong>
+          <p>Double click to place a start node and double click again to place an end node. Once you have placed these nodes, you can move them by clicking on the node you wish to move and then dragging the mouse while holding down the left click button on your mouse, or alternatively double clicking again on an empty node.</p>
+          <br>
+          <strong>Drawing Walls</strong>
+          <p>Simply click and move the mouse on the empty nodes (the white squares) to create walls on the grid, or alternatively simply just click the "Generate Random Walls" button to do this automatically.</p>
+          <br>
+          <strong>Removing Walls</strong>
+          <p>Simply click on a wall to erase it. To erase multiple walls click on a wall and then drag the mouse while holding down the left click button on your mouse, or alternatively click "Clear Walls" to remove all walls.</p>
+          <br>
+          <strong>Key</strong>
+          <img src="image.png" alt="Key">
+    
+        </div>
+       </div>
+   </div>
+    <script type="module" src="./modules/main.js"></script>
+  </body>
+</html>
