@@ -1,9 +1,9 @@
 const showNotification = (type, text, time = 3000) => {
-  const popupNotifcation = document.getElementById('snackbar');
-  popupNotifcation.innerHTML = text;
-  popupNotifcation.className = 'show';
+  const popupNotification = document.getElementById('snackbar');
+  popupNotification.innerHTML = text;
+  popupNotification.className = 'show';
   setTimeout(function() {
-    popupNotifcation.classList.remove('show');
+    popupNotification.classList.remove('show');
   }, time);
 };
 
