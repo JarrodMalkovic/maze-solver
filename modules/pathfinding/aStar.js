@@ -118,7 +118,7 @@ const lowestFCost = (arr, start, end, fCostObj) => {
   return currentMin;
 };
 
-// FCost is just F = G + H
+// FCost is the sum of both the HCost and GCost
 const getFCost = (current, start, end) => {
   return getHCost(current, end) + getGCost(current, start);
 };

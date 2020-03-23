@@ -1,6 +1,5 @@
 import { board } from '../main.js';
 
-// helper function
 const delayed = (function() {
   let queue = [];
 
