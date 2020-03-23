@@ -1,5 +1,5 @@
-import { Board } from './board.js';
-import { setUpButtons } from './buttons.js';
+import { Board } from './display/board.js';
+import { setUpButtons } from './display/buttons.js';
 
 const board = new Board();
 

@@ -1,6 +1,6 @@
-import { board } from './main.js';
-import { drawOperations, drawPath } from './utils.js';
-import { showNotification } from './notifications.js';
+import { board } from '../main.js';
+import { drawOperations, drawPath } from '../utils/utils.js';
+import { showNotification } from '../utils/notifications.js';
 
 const DFS = () => {
   board.clearPath();

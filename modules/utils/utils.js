@@ -1,4 +1,4 @@
-import { board } from './main.js';
+import { board } from '../main.js';
 
 // helper function
 const delayed = (function() {
@@ -45,7 +45,6 @@ const drawPath = function(path, c) {
       document.getElementById(`${node[0]}-${node[1]}`).classList.add('path');
       if (index === newPath.length - 1) {
         board.setSearchingFalse();
-        console.log('setting false');
       }
     }, c * 10 + 45 * index);
   });

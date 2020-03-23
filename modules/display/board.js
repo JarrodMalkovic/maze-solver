@@ -1,5 +1,3 @@
-import { delayed } from './utils.js';
-
 class Board {
   constructor() {
     this.windowWidth =

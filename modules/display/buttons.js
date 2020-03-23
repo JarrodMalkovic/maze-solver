@@ -1,8 +1,8 @@
-import { board } from './main.js';
-import { aStar } from './aStar.js';
-import { BFS } from './BFS.js';
-import { DFS } from './DFS.js';
-import { showNotification } from './notifications.js';
+import { board } from '../main.js';
+import { aStar } from '../pathfinding/aStar.js';
+import { BFS } from '../pathfinding/BFS.js';
+import { DFS } from '../pathfinding/DFS.js';
+import { showNotification } from '../utils/notifications.js';
 
 //Setting up buttons
 const clearWallsButtons = document.querySelectorAll('.clearWallsButton');
