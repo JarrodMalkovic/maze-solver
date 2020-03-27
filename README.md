@@ -4,10 +4,17 @@ A Maze Solver built using JavaScript, HTML and CSS
 
 ## Table of contents
 
-- [Quick Start](#quick-start)
+- [Live demo](#live-demo)
+- [Run Locally](#run-locally)
 - [Technologies](#technologies)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
-## Quick Start
+## Live demo
+
+View the project [here](https://maze-solver-web-app.herokuapp.com/)
+
+## Run Locally
 
 ### Clone
 
@@ -31,4 +38,8 @@ npm run dev
 
 Project is created with:
 
-- JavaScript, HTML, CSS
+- JavaScript, HTML, CSS, Heroku
+
+## Acknowledgments
+
+Project inspired by [Computerphiles video on pathfinding algorithms](https://www.youtube.com/watch?v=rop0W4QDOUI)
