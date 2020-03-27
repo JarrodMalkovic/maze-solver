@@ -40,6 +40,10 @@ Project is created with:
 
 - JavaScript, HTML, CSS, Heroku
 
+## License
+
+This project is licensed under the MIT License
+
 ## Acknowledgments
 
 Project inspired by [Computerphiles video on pathfinding algorithms](https://www.youtube.com/watch?v=rop0W4QDOUI)
