@@ -18,7 +18,10 @@ const BFS = () => {
     } else {
     }
     setTimeout(function() {
-      if (path[0].length === 0) showNotification(true, 'No path found');
+      if (path[0].length === 0) {
+        board.setSearchingFalse();
+        showNotification(true, 'No path found');
+      }
     }, path[1] * 10);
   }
 };
