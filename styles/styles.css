@@ -75,12 +75,8 @@ table {
 
 @keyframes visited {
   0% {
-    background-color: #34dddd;
     transform: scale(0);
     border-radius: 200%;
-  }
-  30% {
-    background-color: #34dddd;
   }
 
   60% {
