@@ -1,6 +1,6 @@
-# Maze Solver
+# Maze Solver Web App
 
-A Maze Solver Web App built using JavaScript, HTML and CSS
+A Maze Solver built using JavaScript, HTML and CSS
 
 ## Table of contents
 
