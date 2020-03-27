@@ -126,6 +126,10 @@ table {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+div img {
+  display: block;
+  margin: auto;
+}
 .modalDialog {
   position: fixed;
   top: 0;
