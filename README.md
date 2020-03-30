@@ -46,4 +46,4 @@ This project is licensed under the MIT License
 
 ## Acknowledgments
 
-Project inspired by [Computerphiles video on pathfinding algorithms](https://www.youtube.com/watch?v=rop0W4QDOUI)
+Project inspired by [Computerphile's video on pathfinding algorithms](https://www.youtube.com/watch?v=rop0W4QDOUI)
