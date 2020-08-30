@@ -12,12 +12,13 @@ const aStar = (grid, delay = 10) => {
   if (!startNode || !endNode) {
     showNotification(true, 'You must first declare a start and end node');
   } else {
-    const path = findPathAStar(startNode, endNode, delay);
+    const path = findPath(startNode, endNode, delay);
     if (Object.keys(path[0]).length > 0) {
+      console.log(path);
       let constructedPath = constructPath(path[0], path[1]);
       drawPath(constructedPath, path[2]);
     } else {
-      setTimeout(function() {
+      setTimeout(function () {
         board.setSearchingFalse();
         showNotification(true, 'No path found');
       }, path[2] * delay);
@@ -34,7 +35,7 @@ const constructPath = (cameFrom, finalNode) => {
   return path.reverse();
 };
 
-const findPathAStar = (start, end, delay) => {
+const findPath = (start, end, delay) => {
   let openSet = new Set();
   let closedSet = new Set();
   let cameFrom = {};
@@ -49,18 +50,14 @@ const findPathAStar = (start, end, delay) => {
   while (openSet.size > 0) {
     let current = lowestFCost(Array.from(openSet), start, end, fScore);
 
-    if (current[0] === end[0] && current[1] === end[1]) {
-      return [cameFrom, neighbours[i], operationCount];
-    }
-
     openSet.delete(current);
     closedSet.add(current);
 
-    let neighbours = [
+    const neighbours = [
       [current[0] - 1, current[1]],
       [current[0], current[1] - 1],
       [current[0] + 1, current[1]],
-      [current[0], current[1] + 1]
+      [current[0], current[1] + 1],
     ];
 
     for (let i = 0; i < neighbours.length; i++) {
@@ -82,8 +79,9 @@ const findPathAStar = (start, end, delay) => {
 
       board.GridVisited(neighbours[i]);
       operationCount++;
+
       let tentative_gScore = gScore[current] || getGCost(current, start);
-      tentative_gScore += 5;
+      tentative_gScore += 10;
 
       if (
         tentative_gScore < gScore[neighbours[i]] ||
@@ -106,7 +104,7 @@ const findPathAStar = (start, end, delay) => {
 const lowestFCost = (arr, start, end, fCostObj) => {
   let lowestCost = Infinity;
   let currentMin;
-  arr.forEach(node => {
+  arr.forEach((node) => {
     if (fCostObj[node] < lowestCost) {
       currentMin = node;
       lowestCost = fCostObj[node];
