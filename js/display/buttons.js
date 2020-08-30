@@ -2,6 +2,7 @@ import { board } from '../main.js';
 import { aStar } from '../pathfinding/aStar.js';
 import { BFS } from '../pathfinding/BFS.js';
 import { DFS } from '../pathfinding/DFS.js';
+import { bidirectional } from '../pathfinding/bidirectional.js';
 import { showNotification } from '../utils/notifications.js';
 
 //Setting up buttons
@@ -17,8 +18,8 @@ const dropdownContent = document.querySelector('.dropdown-content');
 let algorithm = '';
 
 const setUpButtons = () => {
-  clearWallsButtons.forEach(button => {
-    button.addEventListener('click', e => {
+  clearWallsButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
       if (!board.getSearching()) {
         board.clearPath();
         board.clearWalls();
@@ -26,7 +27,7 @@ const setUpButtons = () => {
     });
   });
 
-  dropdownButton.addEventListener('click', e => {
+  dropdownButton.addEventListener('click', (e) => {
     let dropdownButtons = dropdownContent.getElementsByTagName('*');
     for (let i = 0; i < dropdownButtons.length; ++i) {
       e = dropdownButtons[i];
@@ -34,7 +35,7 @@ const setUpButtons = () => {
     }
   });
 
-  menuButton.addEventListener('click', e => {
+  menuButton.addEventListener('click', (e) => {
     const navbar = document.querySelector('.navigation');
     if (navbar.className === 'navigation') {
       navbar.className += ' responsive';
@@ -43,16 +44,16 @@ const setUpButtons = () => {
     }
   });
 
-  clearPathButtons.forEach(button => {
-    button.addEventListener('click', e => {
+  clearPathButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
       if (!board.getSearching()) {
         board.clearPath();
       }
     });
   });
 
-  generateWallsButtons.forEach(button => {
-    button.addEventListener('click', e => {
+  generateWallsButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
       if (!board.getSearching()) {
         board.clearPath();
         board.clearWalls();
@@ -61,15 +62,15 @@ const setUpButtons = () => {
     });
   });
 
-  dropdownSelector.addEventListener('click', e => {
+  dropdownSelector.addEventListener('click', (e) => {
     algorithm = e.target.id;
-    visualizeButtons.forEach(button => {
+    visualizeButtons.forEach((button) => {
       button.innerHTML = `Visualize ${algorithm}`;
     });
   });
 
-  visualizeButtons.forEach(button => {
-    button.addEventListener('click', e => {
+  visualizeButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
       if (!board.getSearching()) {
         switch (algorithm) {
           case 'BFS':
@@ -80,6 +81,12 @@ const setUpButtons = () => {
             break;
           case 'DFS':
             DFS();
+            break;
+          case "Dijkstra's":
+            Dijkstra();
+            break;
+          case 'Bidirectional Search':
+            bidirectional();
             break;
           default:
             showNotification(true, 'You must first select an algorithm!');
