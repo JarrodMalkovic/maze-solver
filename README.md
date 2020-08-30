@@ -12,7 +12,7 @@ A Maze Solver built using JavaScript, HTML and CSS
 
 ## Live demo
 
-View the project [here](https://maze-solver-web-app.herokuapp.com/)
+View the project [here](http://mazesolver.xyz/)
 
 ## Run Locally
 
