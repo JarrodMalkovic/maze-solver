@@ -82,9 +82,6 @@ const setUpButtons = () => {
           case 'DFS':
             DFS();
             break;
-          case "Dijkstra's":
-            Dijkstra();
-            break;
           case 'Bidirectional Search':
             bidirectional();
             break;
