@@ -10,7 +10,7 @@ class Board {
       document.documentElement.clientHeight ||
       document.body.clientHeight;
 
-    this.numRows = Math.ceil(this.windowHeight / 30);
+    this.numRows = Math.ceil((this.windowHeight - 45) / 30);
     this.numCols = Math.ceil(this.windowWidth / 30);
 
     this.removingWalls = false;
@@ -163,7 +163,7 @@ class Board {
         if (Math.random() < 0.3 && this.grid[x][y] === 0) {
           this.setGridWall([x, y]);
           numWalls++;
-          setTimeout(function() {
+          setTimeout(function () {
             document.getElementById(`${x}-${y}`).classList.add('wall');
           }, numWalls * 3);
         }
@@ -171,7 +171,7 @@ class Board {
     }
     // Required to bind 'this' to 'this_' as 'this' is not within the scope of the setTimeout function!
     const this_ = this;
-    setTimeout(function() {
+    setTimeout(function () {
       this_.setSearchingFalse();
     }, numWalls * 3);
   }
@@ -227,14 +227,13 @@ class Board {
   mouseListeners() {
     let table = document.querySelector('table');
 
-    const handleMouseDown = e => {
+    const handleMouseDown = (e) => {
       if (!this.searching) {
         let x = ~~(e.clientX / 30);
         let y = ~~(
           (e.clientY - document.querySelector('.navigation').clientHeight) /
           30
         );
-        console.log('x');
         let id = document.getElementById(`${x}-${y}`);
         if (this.prevX !== x || this.prevY !== y) {
           if (this.drawingWalls && this.grid[x][y] === 0) {
@@ -258,7 +257,7 @@ class Board {
       }
     };
 
-    table.addEventListener('mousedown', e => {
+    table.addEventListener('mousedown', (e) => {
       if (!this.searching) {
         let x = ~~(e.clientX / 30);
         let y = ~~(
@@ -287,7 +286,7 @@ class Board {
       table.addEventListener('mousemove', handleMouseDown, true);
     });
 
-    table.addEventListener('mouseup', e => {
+    table.addEventListener('mouseup', (e) => {
       this.removingWalls = false;
       this.drawingWalls = false;
       this.movingStartNode = false;
