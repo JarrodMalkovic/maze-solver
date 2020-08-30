@@ -179,33 +179,29 @@ div img {
 }
 
 /*-------------------------------------------------------*/
-/* Notifications
+/* Snackbar (Notifications)
 /*-------------------------------------------------------*/
 #snackbar {
-  visibility: hidden; /* Hidden by default. Visible on click */
-  min-width: 250px; /* Set a default minimum width */
-  margin-left: -125px; /* Divide value of min-width by 2 */
-  background-color: black; /* Black background color */
-  color: #fff; /* White text color */
-  text-align: center; /* Centered text */
-  border-radius: 2px; /* Rounded borders */
-  padding: 16px; /* Padding */
-  position: fixed; /* Sit on top of the screen */
-  z-index: 1; /* Add a z-index if needed */
-  left: 50%; /* Center the snackbar */
-  bottom: 30px; /* 30px from the bottom */
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
 }
 
-/* Show the snackbar when clicking on a button (class added with JavaScript) */
 #snackbar.show {
-  visibility: visible; /* Show the snackbar */
-  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-  However, delay the fade out process for 2.5 seconds */
+  visibility: visible;
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-/* Animations to fade the snackbar in and out */
 @-webkit-keyframes fadein {
   from {
     bottom: 0;
@@ -258,7 +254,6 @@ div img {
   display: none;
 }
 
-/* Navbar container */
 .navigation {
   overflow-x: hidden;
   background-color: black;
@@ -267,7 +262,6 @@ div img {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-/* Links inside the navigation */
 .navigation a {
   float: left;
   font-size: 16px;
@@ -277,13 +271,11 @@ div img {
   text-decoration: none;
 }
 
-/* The dropdown container */
 .dropdown {
   float: right;
   overflow: hidden;
 }
 
-/* Dropdown button */
 .dropdown .dropbtn {
   font-size: 16px;
   border: none;
@@ -296,7 +288,7 @@ div img {
   text-align: left;
   width: 100%;
 }
-/* #393b55; */
+
 .navigation a:hover,
 .dropdown:hover .dropbtn {
   background-color: rgb(29, 29, 29);
