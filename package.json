@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jarrod-malkovic/maze-solver.git"
+    "url": "git+https://github.com/jarrodmalkovic/maze-solver.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jarrod-malkovic/maze-solver/issues"
+    "url": "https://github.com/jarrodmalkovic/maze-solver/issues"
   },
-  "homepage": "https://github.com/jarrod-malkovic/maze-solver#readme",
+  "homepage": "https://github.com/jarrodmalkovic/maze-solver#readme",
   "dependencies": {
-    "http-server": "^0.12.1"
+    "http-server": "^0.12.3"
   }
 }
