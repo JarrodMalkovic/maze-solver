@@ -13,11 +13,10 @@ const BFS = () => {
     console.log('Searching...');
     const path = findPathBFS(startNode, endNode);
     if (path[0].length > 0) {
-      console.log(path[0].length);
       drawPath(path[0], path[1]);
     } else {
     }
-    setTimeout(function() {
+    setTimeout(function () {
       if (path[0].length === 0) {
         board.setSearchingFalse();
         showNotification(true, 'No path found');
@@ -29,7 +28,6 @@ const BFS = () => {
 const findPathBFS = (start, end) => {
   board.setSearchingTrue();
   let operationCount = 0;
-  //TO DO: Implement queue based on a linked list, not array!
   let queue = [];
   queue.push([start]);
 
@@ -41,7 +39,7 @@ const findPathBFS = (start, end) => {
       [pos[0] + 1, pos[1]],
       [pos[0], pos[1] + 1],
       [pos[0] - 1, pos[1]],
-      [pos[0], pos[1] - 1]
+      [pos[0], pos[1] - 1],
     ];
 
     let operations = [];
