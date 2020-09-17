@@ -14,8 +14,8 @@ const aStar = (grid, delay = 10) => {
   } else {
     const path = findPath(startNode, endNode, delay);
     if (Object.keys(path[0]).length > 0) {
-      console.log(path);
       let constructedPath = constructPath(path[0], path[1]);
+      console.log(constructedPath.length);
       drawPath(constructedPath, path[2]);
     } else {
       setTimeout(function () {
@@ -37,21 +37,31 @@ const constructPath = (cameFrom, finalNode) => {
 
 const findPath = (start, end, delay) => {
   let openSet = new Set();
-  let closedSet = new Set();
   let cameFrom = {};
   let fScore = {};
   let gScore = {};
   let operationCount = 0;
 
-  openSet.add(start);
+  for (let row = 0; row < board.numberCols(); row++) {
+    for (let col = 0; col < board.numberRows(); col++) {
+      gScore[row + ',' + col] = Infinity;
+      fScore[row + ',' + col] = Infinity;
+    }
+  }
+
   gScore[start] = 0;
   fScore[start] = getHCost(start, end);
+
+  openSet.add(start);
 
   while (openSet.size > 0) {
     let current = lowestFCost(Array.from(openSet), start, end, fScore);
 
+    if (board.GridValue(current) === 0) {
+      board.GridVisited(current);
+    }
+
     openSet.delete(current);
-    closedSet.add(current);
 
     const neighbours = [
       [current[0] - 1, current[1]],
@@ -60,59 +70,55 @@ const findPath = (start, end, delay) => {
       [current[0], current[1] + 1],
     ];
 
-    for (let i = 0; i < neighbours.length; i++) {
-      if (neighbours[i][0] == end[0] && neighbours[i][1] == end[1]) {
-        cameFrom[neighbours[i]] = current.toString();
-        return [cameFrom, neighbours[i], operationCount];
+    for (let neighbour of neighbours) {
+      if (neighbour[0] == end[0] && neighbour[1] == end[1]) {
+        cameFrom[neighbour] = current.toString();
+        return [cameFrom, neighbour, operationCount];
       }
 
       if (
-        neighbours[i][0] < 0 ||
-        neighbours[i][0] >= board.numberCols() ||
-        neighbours[i][1] < 0 ||
-        neighbours[i][1] >= board.numberRows() ||
-        board.GridValue(neighbours[i]) !== 0 ||
-        closedSet.has(neighbours[i])
+        neighbour[0] < 0 ||
+        neighbour[0] >= board.numberCols() ||
+        neighbour[1] < 0 ||
+        neighbour[1] >= board.numberRows() ||
+        board.GridValue(neighbour) !== 0
       ) {
         continue;
       }
 
-      board.GridVisited(neighbours[i]);
       operationCount++;
 
-      let tentative_gScore = gScore[current] || getGCost(current, start);
-      tentative_gScore += 10;
+      let tentative_gScore = gScore[current] + 10;
 
-      if (
-        tentative_gScore < gScore[neighbours[i]] ||
-        tentative_gScore < getGCost(neighbours[i], start) ||
-        !openSet.has(neighbours[i])
-      ) {
-        cameFrom[neighbours[i]] = current.toString();
-        gScore[neighbours[i]] = tentative_gScore;
-        fScore[neighbours[i]] = tentative_gScore + getHCost(neighbours[i], end);
-        if (!openSet.has(neighbours[i])) {
-          openSet.add(neighbours[i]);
+      const neighboursGScore = gScore[neighbour];
+
+      if (tentative_gScore < neighboursGScore) {
+        cameFrom[neighbour] = current.toString();
+        gScore[neighbour] = tentative_gScore;
+        fScore[neighbour] = gScore[neighbour] + getHCost(neighbour, end);
+        if (!openSet.has(neighbour)) {
+          openSet.add(neighbour);
         }
       }
-      drawOperations([neighbours[i]], operationCount, delay);
+
+      drawOperations([neighbour], operationCount, delay);
     }
   }
+
   return [{}, null, operationCount];
 };
 
 const lowestFCost = (arr, start, end, fCostObj) => {
   let lowestCost = Infinity;
   let currentMin;
+
   arr.forEach((node) => {
     if (fCostObj[node] < lowestCost) {
       currentMin = node;
       lowestCost = fCostObj[node];
-    } else if (getFCost(node, start, end) < lowestCost) {
-      currentMin = node;
-      lowestCost = getFCost(node, start, end);
     }
   });
+
   return currentMin;
 };
 
@@ -128,7 +134,7 @@ const getHCost = (current, end) => {
   return Math.sqrt(Math.pow(dy, 2) + Math.pow(dx, 2));
 };
 
-// GCost is the distance between the current node and the start node
+// GCost is the distance between the current node and the start get
 const getGCost = (current, start) => {
   let dx = (current[0] - start[0]) * 10;
   let dy = (current[1] - start[1]) * 10;
