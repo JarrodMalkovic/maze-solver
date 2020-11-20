@@ -39,7 +39,7 @@ npm start
 
 Project is created with:
 
-- JavaScript, HTML, CSS, Heroku
+- JavaScript, HTML, CSS and deployed using Netlify
 
 ## License
 
