@@ -1,21 +1,33 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2253d234-7ff7-41c0-8288-0560ebed8a94/deploy-status)](https://app.netlify.com/sites/romantic-leakey-ce28a6/deploys)
-# Maze Solver Web App
+<h1 align="center">A Maze Solver built using JavaScript, HTML and CSS</h1>
 
-A Maze Solver built using JavaScript, HTML and CSS
+<h3 align="center">
+  <a href="https://mazesolver.xyz/">Visit the live app</a> |
+  <a href="https://github.com/jarrodmalkovic/maze-solver/issues">Report Bug</a> |
+  <a href="https://github.com/jarrodmalkovic/maze-solver/issues">Request Feature</a> 
+</h3>
 
-## Table of contents
+![Tech logos](https://i.ibb.co/Gxfg1m3/tech-info-maze-solver.png)
 
-- [Live demo](#live-demo)
+![App Screenshot](https://i.ibb.co/jhpQNCQ/app-screenshot.png)
+
+## 📝 Table of contents
+
 - [Run Locally](#run-locally)
 - [Technologies](#technologies)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 
-## Live demo
+## ✨ Features
 
-View the project [here](http://mazesolver.xyz/)
+- Proven, scalable, and easy to understand project structure
+- Written in modern React, only functional components with hooks
+- A variety of custom light-weight UI components such as datepicker, modal, various form elements etc
+- Simple local React state management, without redux, mobx, or similar
+- Custom webpack setup, without create-react-app or similar
+- Client written in Babel powered JavaScript
+- API written in TypeScript and using TypeORM
 
-## Run Locally
+## 🚀 Run Locally
 
 ### Clone
 
@@ -35,15 +47,15 @@ npm start
 
 - Then open the project in a browser on http://127.0.0.1:8080
 
-## Technologies
+## 💻 Technologies
 
 Project is created with:
 
 - JavaScript, HTML, CSS and deployed using Netlify
 
-## License
+## ⚖️ License
 
-This project is licensed under the MIT License
+This project is licensed under the Unlicense License
 
 ## Acknowledgments
 
