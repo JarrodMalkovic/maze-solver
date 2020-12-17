@@ -1,5 +1,3 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2253d234-7ff7-41c0-8288-0560ebed8a94/deploy-status)](https://app.netlify.com/sites/romantic-leakey-ce28a6/deploys)
-
 <h1 align="center">A Maze Solver built using JavaScript, HTML and CSS</h1>
 
 <h3 align="center">
