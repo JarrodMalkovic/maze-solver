@@ -10,7 +10,7 @@
 
 ![Tech logos](https://i.ibb.co/pWb31Wy/tech-info-maze-solver.png)
 
-![App Screenshot](https://i.ibb.co/jhpQNCQ/app-screenshot.png)
+![App Screenshot](https://i.ibb.co/fDkgDdD/maze-solver.gif)
 
 ## 📝 Table of contents
 
