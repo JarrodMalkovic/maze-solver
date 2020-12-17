@@ -14,6 +14,7 @@
 
 ## 📝 Table of contents
 
+- [Features](#features)
 - [Run Locally](#run-locally)
 - [Technologies](#technologies)
 - [License](#license)
