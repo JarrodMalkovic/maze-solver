@@ -57,6 +57,6 @@ Project is created with:
 
 This project is licensed under the Unlicense License
 
-## Acknowledgments
+## 🙌 Acknowledgments
 
-Project inspired by [Computerphile's video on pathfinding algorithms](https://www.youtube.com/watch?v=rop0W4QDOUI)
+Project inspired by [Computerphile's video on maze solving](https://www.youtube.com/watch?v=rop0W4QDOUI)
