@@ -5,19 +5,30 @@
   "main": "./modules/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jarrodmalkovic/maze-solver.git"
   },
   "author": "",
-  "license": "MIT",
+  "license": "Unlicense",
   "bugs": {
     "url": "https://github.com/jarrodmalkovic/maze-solver/issues"
   },
   "homepage": "https://github.com/jarrodmalkovic/maze-solver#readme",
   "dependencies": {
     "http-server": "^0.12.3"
+  },
+  "devDependencies": {
+    "css-loader": "^5.0.1",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.2.1",
+    "script-loader": "^0.7.2",
+    "style-loader": "^2.0.0",
+    "webpack": "4.41.2",
+    "webpack-cli": "3.3.10"
   }
 }
