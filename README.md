@@ -28,6 +28,12 @@
 
 - Clone this repo to your local machine using `https://github.com/jarrodmalkovic/maze-solver.git`
 
+### Install the required development dependencies
+
+```bash
+npm run install
+```
+
 ### Bundle the assets
 
 ```bash
