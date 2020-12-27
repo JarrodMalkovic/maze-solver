@@ -4,17 +4,17 @@ import { showNotification } from '../utils/notifications.js';
 
 const BFS = () => {
     board.clearPath();
+    board.setSearchingTrue();
+
     const startNode = board.getStartNode();
     const endNode = board.getEndNode();
+
     if (!startNode || !endNode) {
         showNotification(true, 'You must first declare a start and end node');
-        console.log('You must first declare a start and end node');
     } else {
-        console.log('Searching...');
         const path = findPathBFS(startNode, endNode);
         if (path[0].length > 0) {
             drawPath(path[0], path[1]);
-            console.log(path[0].length);
         }
         setTimeout(function () {
             if (path[0].length === 0) {
@@ -26,7 +26,6 @@ const BFS = () => {
 };
 
 const findPathBFS = (start, end) => {
-    board.setSearchingTrue();
     let operationCount = 0;
     let queue = [];
     queue.push([start]);
@@ -64,9 +63,10 @@ const findPathBFS = (start, end) => {
             operationCount++;
             queue.push(path.concat([direction[i]]));
         }
+
         drawOperations(operations, operationCount);
     }
-    console.log('No Path Found!');
+
     return [[], operationCount];
 };
 

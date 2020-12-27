@@ -15,7 +15,6 @@ const aStar = (grid, delay = 10) => {
         const path = findPath(startNode, endNode, delay);
         if (Object.keys(path[0]).length > 0) {
             let constructedPath = constructPath(path[0], path[1]);
-            console.log(constructedPath.length);
             drawPath(constructedPath, path[2]);
         } else {
             setTimeout(function () {
@@ -28,10 +27,12 @@ const aStar = (grid, delay = 10) => {
 
 const constructPath = (cameFrom, finalNode) => {
     let path = [];
+
     while (finalNode) {
         path.push(finalNode.toString().split(','));
         finalNode = cameFrom[finalNode.toString()];
     }
+
     return path.reverse();
 };
 
@@ -71,7 +72,6 @@ const findPath = (start, end, delay) => {
         ];
 
         for (let neighbour of neighbours) {
-            console.log(neighbour);
             if (neighbour[0] == end[0] && neighbour[1] == end[1]) {
                 cameFrom[neighbour] = current.toString();
                 return [cameFrom, neighbour, operationCount];

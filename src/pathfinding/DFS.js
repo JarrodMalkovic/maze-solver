@@ -5,12 +5,13 @@ import { showNotification } from '../utils/notifications.js';
 const DFS = () => {
     board.clearPath();
     board.setSearchingTrue();
+
     const startNode = board.getStartNode();
     const endNode = board.getEndNode();
+
     if (!startNode || !endNode) {
         showNotification(true, 'You must first declare a start and end node');
     } else {
-        console.log('Searching...');
         const path = findPathDFS(startNode, endNode);
         if (path[0].length > 0) {
             drawPath(path[0], path[1]);
@@ -27,7 +28,9 @@ const findPathDFS = (startNode, endNode) => {
     let operationCount = 0;
     let stack = [];
     let path = [];
+
     stack.push(startNode);
+
     while (stack.length > 0) {
         path.push(stack.pop());
         let vertex = path[path.length - 1];
@@ -64,8 +67,10 @@ const findPathDFS = (startNode, endNode) => {
 
             stack.push(neighbours[i]);
         }
+
         drawOperations(operations, operationCount);
     }
+
     return [[], operationCount];
 };
 

@@ -18,11 +18,8 @@ class Board {
         this.searching = false;
     }
     GridVisited(pos) {
-        if (pos[0] < this.numCols && pos[0] >= 0 && pos[1] >= 0 && pos[1] < this.numRows) {
+        if (pos[0] < this.numCols && pos[0] >= 0 && pos[1] >= 0 && pos[1] < this.numRows)
             return (this.grid[pos[0]][pos[1]] = -1);
-        } else {
-            console.log('ERROR: The node you are trying to mark as visited is out of range!');
-        }
     }
     getSearching() {
         return this.searching;
@@ -129,7 +126,6 @@ class Board {
     }
 
     generateRandomWalls() {
-        console.log('Generating Random Walls...');
         this.setSearchingTrue();
         let numWalls = 0;
         for (let y = 0; y < this.numRows; y++) {
@@ -151,7 +147,6 @@ class Board {
     }
 
     clearWalls() {
-        console.log('Clearing Walls...');
         for (let y = 0; y < this.numRows; y++) {
             for (let x = 0; x < this.numCols; x++) {
                 if (this.grid[x][y] === 1) {
@@ -163,7 +158,6 @@ class Board {
     }
 
     clearPath() {
-        console.log('Clearing Path...');
         for (let y = 0; y < this.numRows; y++) {
             for (let x = 0; x < this.numCols; x++) {
                 if (this.grid[x][y] === -1) {
