@@ -26,7 +26,7 @@
 
 ### Clone
 
-- Clone this repo to your local machine using `https://github.com/jarrodmalkovic/maze-solver.git`
+Clone this repo to your local machine using `https://github.com/jarrodmalkovic/maze-solver.git`
 
 ### Install the required development dependencies
 
@@ -42,7 +42,7 @@ npm run build
 
 ### Run in browser
 
-- Open the `index.html` located in the newly created `dist/webpack-4` folder in your browser
+Open the `index.html` located in the newly created `dist/webpack-4` folder in your browser
 
 ## 💻 Technologies
 
