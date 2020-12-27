@@ -42,7 +42,7 @@ npm run build
 
 Project is created with:
 
-- JavaScript, HTML, CSS and deployed using Netlify
+- JavaScript, HTML, CSS, Webpack, Babel, ESLint, Prettier and deployed using Netlify
 
 ## ⚖️ License
 
