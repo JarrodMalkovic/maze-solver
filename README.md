@@ -1,20 +1,28 @@
-# Maze Solver Web App
+<h1 align="center">A Maze Solver built using JavaScript, HTML and CSS</h1>
 
-A Maze Solver built using JavaScript, HTML and CSS
+<h3 align="center">
+  <a href="https://mazesolver.xyz/">Visit the live app</a> |
+  <a href="https://github.com/jarrodmalkovic/maze-solver/issues">Report Bug</a> |
+  <a href="https://github.com/jarrodmalkovic/maze-solver/issues">Request Feature</a> 
+</h3>
 
-## Table of contents
+![Tech logos](https://i.ibb.co/pWb31Wy/tech-info-maze-solver.png)
 
-- [Live demo](#live-demo)
+![App Screenshot](https://i.ibb.co/fDkgDdD/maze-solver.gif)
+
+## 📝 Table of contents
+
+- [Features](#features)
 - [Run Locally](#run-locally)
 - [Technologies](#technologies)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 
-## Live demo
+## ✨ Features
 
-View the project [here](http://mazesolver.xyz/)
+- Feature list coming soon
 
-## Run Locally
+## 🚀 Run Locally
 
 ### Clone
 
@@ -34,16 +42,16 @@ npm start
 
 - Then open the project in a browser on http://127.0.0.1:8080
 
-## Technologies
+## 💻 Technologies
 
 Project is created with:
 
-- JavaScript, HTML, CSS, Heroku
+- JavaScript, HTML, CSS and deployed using Netlify
 
-## License
+## ⚖️ License
 
-This project is licensed under the MIT License
+This project is licensed under the Unlicense License
 
-## Acknowledgments
+## 🙌 Acknowledgments
 
-Project inspired by [Computerphile's video on pathfinding algorithms](https://www.youtube.com/watch?v=rop0W4QDOUI)
+Project inspired by [Computerphile's video on maze solving](https://www.youtube.com/watch?v=rop0W4QDOUI)
