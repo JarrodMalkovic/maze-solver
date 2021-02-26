@@ -1,4 +1,4 @@
-<h1 align="center">🗳️ A web app for creating instant, real-time polls using Firebase</h1>
+<h1 align="center">Firepoll: creating instant, real-time polls using Firebase</h1>
 
 <h3 align="center">
   <a href="https://firepoll.xyz/">Visit the live app</a> |
