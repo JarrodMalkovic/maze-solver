@@ -24,9 +24,8 @@
 
 ## 🚀 Run Locally
 
-### Clone
+### Clone repo to your local machine 
 
-Clone this repo to your local machine 
 
 ```bash
 git clone https://github.com/jarrodmalkovic/maze-solver.git
