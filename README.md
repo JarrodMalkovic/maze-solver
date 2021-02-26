@@ -26,7 +26,11 @@
 
 ### Clone
 
-Clone this repo to your local machine using `https://github.com/jarrodmalkovic/maze-solver.git`
+Clone this repo to your local machine 
+
+```bash
+git clone https://github.com/jarrodmalkovic/maze-solver.git
+```
 
 ### Install the required development dependencies
 
