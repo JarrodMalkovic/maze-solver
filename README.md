@@ -45,15 +45,10 @@ npm run build
 
 Open the `index.html` located in the newly created `dist/webpack-4` folder in your browser
 
-## 💻 Technologies Utilized
+## 💻 Technologies
 
-- JavaScript
-- HTML/CSS
-- Webpack
-- Babel
-- ESLint
-- Prettier
-- Deployed using Netlify
+Project is created with:
+- JavaScript, HTML, CSS, Webpack, Babel, ESLint, Prettier and deployed using Netlify
 
 ## ⚖️ License
 
