@@ -53,3 +53,11 @@ Project is created with:
 ## ⚖️ License
 
 This project is licensed under the Unlicense License
+
+<hr>
+
+<h3>
+  <a href="https://mazesolver.xyz/">Visit the live app</a> |
+  <a href="https://github.com/jarrodmalkovic/maze-solver/issues">Report Bug</a> |
+  <a href="https://github.com/jarrodmalkovic/maze-solver/issues">Request Feature</a> 
+</h3>
