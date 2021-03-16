@@ -11,14 +11,9 @@
 ![App Screenshot](https://i.ibb.co/fDkgDdD/maze-solver.gif)
 ## 📝 Table of contents
 
-- [Features](#-features)
 - [Run Locally](#-run-locally)
 - [Technologies](#-technologies)
 - [License](#-license)
-
-## ✨ Features
-
-- Feature list coming soon
 
 ## 🚀 Run Locally
 
